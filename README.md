@@ -2,7 +2,7 @@
 
 data/
 
-  ec_data/
+\tec_data/
 
 results/
   
