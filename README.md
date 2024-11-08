@@ -1,2 +1,11 @@
-# oet_gf_ti
-Time integration and gap filling analysis to inform daily interpolation and gap filling methods for satellite-driven ET modeling.
+# oet_gf_ti: OpenET gap filling and time integration analysis
+
+data/
+  ec_data/
+results/
+  tables/
+  figures/
+src/ 
+  oet_gf_ti.py
+
+
