@@ -26,7 +26,8 @@ class get_tower_data(object):
         self.lat, self.lon = self.get_lat_lon_from_fname()
         self.site_df = self.read_data()
         self.start_time,self.end_time = self.get_start_end_times()
-        self.site_all_df = self.add_OpenET_df()
+        self.site_oet_df = self.add_OpenET_df()
+        self.site_all_df = self.add_aliased_df()
 
 
     def get_meta(self):
