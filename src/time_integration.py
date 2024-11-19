@@ -167,7 +167,8 @@ class get_tower_data(object):
         if self.debug==True:
           print('adding aliased data')
         for i in [8,16,32]:
-          self_dfX =self.site_df[::i].copy()
-          self_dfX.rename(columns={'ET_corr':f'ET_corr{str(i)}'},inplace=True)
-          add_allias_df = pd.merge(add_allias_df,self_dfX[[f'ET_corr{str(i)}']], how='outer', left_index=True, right_index=True)
+          for j in np.arange(i):
+            self_dfX =self.site_df[j::i].copy()
+            self_dfX.rename(columns={'ET_corr':f'ET_corr{str(i)}_{str(j)}', "EToF_filtered":f"EToF_filtered{str(i)}_{str(j)}"}),inplace=True)
+            add_allias_df = pd.merge(add_allias_df,self_dfX[[f'ET_corr{str(i)}_{str(j)}',f"EToF_filtered{str(i)}_{str(j)}"]], how='outer', left_index=True, right_index=True)
         return add_allias_df
